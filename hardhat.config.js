@@ -18,15 +18,15 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+require('@nomiclabs/hardhat-waffle');
+require('dotenv').config();
+
 module.exports = {
   solidity: "0.8.4",
-  paths: {
-    artifacts: './src/artifacts',
-  },
   networks: {
-    rinkeby: {
-      url: `${process.env.POKT_RINKEBY_URL}`,
-      accounts: [`${process.env.RINKEBY_PRIVATE_KEY}`],
+    goerli: {
+      url: `${process.env.POKT_GOERLI_URL}`,
+      accounts: [`${process.env.GOERLI_PRIVATE_KEY}`]
     }
   }
 };
